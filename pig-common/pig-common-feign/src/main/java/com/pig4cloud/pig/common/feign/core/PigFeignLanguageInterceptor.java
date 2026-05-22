@@ -17,7 +17,7 @@ public class PigFeignLanguageInterceptor implements RequestInterceptor {
 
 	@Override
 	public void apply(RequestTemplate template) {
-		HttpServletRequest request = WebUtils.getRequest();
+		HttpServletRequest request = WebUtils.getRequest().get();
 		if (request == null) {
 			return;
 		}
